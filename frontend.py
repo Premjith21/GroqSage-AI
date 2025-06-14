@@ -52,10 +52,11 @@ if submitted and user_query.strip():
             
             logger.info(f"Sending request with payload: {payload}")
             response = requests.post(
-                "http://localhost:9999/chat",
+                "https://groqsage-ai.onrender.com/chat",
                 json=payload,
                 timeout=60
             )
+
             response.raise_for_status()
             
             data = response.json()
